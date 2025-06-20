@@ -1,4 +1,21 @@
 const scrollTopBtn = document.getElementById("scrollTopBtn");
+const contactBtn = document.getElementById("contactFloatingBtn");
+const modal = document.getElementById("contactForm");
+const closeBtn = document.querySelector(".close-btn");
+
+contactBtn.onclick = function () {
+  modal.style.display = "flex";
+};
+
+closeBtn.onclick = function () {
+  modal.style.display = "none";
+};
+
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
 
 window.onscroll = function () {
   if (
@@ -26,7 +43,4 @@ document.addEventListener("DOMContentLoaded", function () {
       section.style.transform = "translateY(0)";
     }, index * 200);
   });
-});
-document.getElementById("goToHtmlPage").addEventListener("click", function () {
-  window.location.href = "html.html";
 });

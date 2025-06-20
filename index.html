@@ -8,58 +8,168 @@
   </head>
   <body>
     <header>
+      <style>
+        header {
+          position: relative;
+          overflow: hidden;
+        }
+        .cube-container {
+          position: absolute;
+          top: 60%;
+          right: 10%;
+          width: 200px;
+          height: 200px;
+          transform: translateY(-50%);
+          perspective: 800px;
+        }
+        .cube {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          transform-style: preserve-3d;
+          animation: spin 8s linear infinite;
+        }
+        .cube .face {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background: rgba(255, 255, 255, 0.08);
+          border: 2px solid rgba(255, 255, 255, 0.25);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: bold;
+          color: #ffffff;
+          font-size: 1.1rem;
+          backdrop-filter: blur(2px);
+        }
+        .cube .front {
+          transform: translateZ(125px);
+        }
+        .cube .back {
+          transform: rotateY(180deg) translateZ(125px);
+        }
+        .cube .right {
+          transform: rotateY(90deg) translateZ(125px);
+        }
+        .cube .left {
+          transform: rotateY(-90deg) translateZ(125px);
+        }
+        .cube .top {
+          transform: rotateX(90deg) translateZ(125px);
+        }
+        .cube .bottom {
+          transform: rotateX(-90deg) translateZ(125px);
+        }
+
+        @keyframes spin {
+          from {
+            transform: rotateX(0deg) rotateY(0deg);
+          }
+          to {
+            transform: rotateX(360deg) rotateY(360deg);
+          }
+        }
+      </style>
       <img src="img/avt.jpg" alt="Ảnh cá nhân" />
       <h1>Phạm Hoàng Long</h1>
       <p>Sinh Viên Trường Đại Học Giao Thông Vận Tải TP. HCM</p>
       <p>Chuyên Ngành: Công Nghệ Thông Tin</p>
+      <nav class="navbar">
+        <ul>
+          <li><a href="#about">Giới thiệu</a></li>
+          <li><a href="#education">Học vấn</a></li>
+          <li><a href="#skills">Kỹ năng</a></li>
+          <li><a href="#hobbies">Sở thích</a></li>
+          <li><a href="#contact">Liên hệ</a></li>
+        </ul>
+      </nav>
+      <div class="cube-container">
+        <div class="cube">
+          <div class="face front">HTML</div>
+          <div class="face back">CSS</div>
+          <div class="face right">JS</div>
+          <div class="face left">Git</div>
+          <div class="face top">SQL</div>
+          <div class="face bottom">C++</div>
+        </div>
+      </div>
     </header>
 
     <div class="container">
       <section id="about">
         <h2>Giới Thiệu</h2>
         <p>
-          Xin chào, tôi là <strong>Phạm Hoàng Long</strong>, sinh viên năm 2 ngành
-          <em>Công nghệ Thông tin</em>. Tôi yêu thích lập trình và thiết kế web. Mục tiêu là trở thành lập trình viên <strong>Full-stack</strong>.
+          Tôi là <strong>Phạm Hoàng Long</strong>, sinh viên năm 2 ngành
+          <em>CNTT</em>, yêu thích lập trình và thiết kế web.
         </p>
       </section>
 
       <section id="education">
         <h2>Học Vấn</h2>
         <ul>
-          <li>Đại Học Giao Thông Vận Tải TP.HCM - CNTT</li>
-          <li>Năm học: 2023 - Nay</li>
+          <li>ĐH Giao Thông Vận Tải TP.HCM - CNTT</li>
+          <li>2023 - Nay</li>
         </ul>
       </section>
 
-     <section id="skills">
-  <h2>Kỹ Năng</h2>
-  <p>Tôi có kinh nghiệm trong các công nghệ web hiện đại:</p>
-  <div class="skill-buttons">
-    <button onclick="location.href='html.html'">HTML</button>
-    <button onclick="location.href='css.html'">CSS</button>
-    <button onclick="location.href='javascript.html'">JavaScript</button>
-    <button onclick="location.href='nextjs.html'">Next.js</button>
-    <button onclick="location.href='git.html'">Git</button>
-  </div>
-</section>
-
+      <section id="skills">
+        <h2>Kỹ Năng</h2>
+        <div class="skill-buttons">
+          <button onclick="location.href='html.html'">HTML</button>
+          <button onclick="location.href='css.html'">CSS</button>
+          <button onclick="location.href='javascript.html'">JavaScript</button>
+          <button onclick="location.href='nextjs.html'">Next.js</button>
+          <button onclick="location.href='git.html'">Git</button>
+        </div>
+      </section>
 
       <section id="hobbies">
         <h2>Sở Thích</h2>
-        <p>🎮 Chơi game, 💻 Lập trình, 🎵 Nghe nhạc, 📚 Đọc sách công nghệ</p>
+        <p>🎮 Game, 💻 Code, 🎵 Nhạc, 📚 Sách công nghệ</p>
       </section>
 
       <section id="contact" class="contact">
         <h2>Liên Hệ</h2>
-        <p>Email: <a href="mailto:longph0352@ut.edu.vn">longph0352@ut.edu.vn</a></p>
-        <p>Điện thoại: <a href="tel:+84xxxxxxxx">+84 xxxxxxxx</a></p>
-        <p>GitHub: <a href="https://github.com/HoangLong345" target="_blank">github.com/HoangLong345</a></p>
+        <p>
+          Email: <a href="mailto:longph0352@ut.edu.vn">longph0352@ut.edu.vn</a>
+        </p>
+        <p>ĐT: <a href="tel:+84xxxxxxxx">+84 xxxxxxxx</a></p>
+        <p>
+          GitHub:
+          <a href="https://github.com/HoangLong345" target="_blank"
+            >github.com/HoangLong345</a
+          >
+        </p>
       </section>
     </div>
 
     <button id="scrollTopBtn" title="Lên đầu trang">↑</button>
-    <script src="script.js"></script>
+
     <footer>
       <p>&copy; 2025 Phạm Hoàng Long. Tất cả quyền được bảo lưu.</p>
+      <button id="contactFloatingBtn" title="Liên hệ với tôi">📩</button>
+    </footer>
+
+    <div id="contactForm" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Liên hệ với tôi</h2>
+        <form>
+          <label for="name">Tên:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="phone">SĐT:</label>
+          <input type="tel" id="phone" name="phone" required />
+
+          <label for="message">Nội dung:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <button type="submit">Gửi</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
