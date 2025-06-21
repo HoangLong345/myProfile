@@ -327,12 +327,12 @@ body {
 }
 .flying-dragon {
   position: absolute;
-  top: 0;
+  top: 20px;
   left: -100px;
   width: 100px;
   height: auto;
   z-index: 10;
-  animation: flyAround 170s linear infinite;
+  animation: flyAround 20s linear infinite;
   border: none !important;
   box-shadow: none !important;
   border-radius: 0 !important;
@@ -341,28 +341,23 @@ body {
 
 @keyframes flyAround {
   0% {
-    top: 20px;
     left: -100px;
     transform: scaleX(1);
   }
   25% {
-    top: 20px;
     left: 100%;
     transform: scaleX(1);
   }
   50% {
-    top: 20px;
     left: 100%;
     transform: scaleX(-1);
   }
   75% {
-    top: 20px;
-    left: -150px;
+    left: -100px;
     transform: scaleX(-1);
   }
   100% {
-    top: 20px;
-    left: -150px;
+    left: -100px;
     transform: scaleX(1);
   }
 }
